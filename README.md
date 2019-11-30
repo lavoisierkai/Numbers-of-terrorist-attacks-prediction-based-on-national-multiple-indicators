@@ -14,10 +14,10 @@ In assignment 1 all “null” data has already been removed, so assignment 2 wo
 2)	Correlation heatmap and joint distribution of pairs of columns from training set
 A heatmap was generated to show correlation between terrorism attack numbers, freedom, GDP, government corruption, happiness rank and health rate. (Graph 1. Correlation heatmap between national multiple indicators and numbers of terrorist attacks), it is very obvious that GDP has the largest impacts on terrorist attack numbers.
 A joint graph of pairs of columns from training set was generated to show the data distribution, for most data pairs, no special patterns were identified except GDP and health index has linear relation. (Graph 2. Joint distribution of pairs of columns from training set)
- ![Graph 1  Correlation heatmap between national multiple indicators and numbers of terrorist attacks)](https://user-images.githubusercontent.com/40677817/69894196-9842c900-1370-11ea-8283-9ea4e221384c.png)
+![Graph 1  Correlation heatmap between national multiple indicators and numbers of terrorist attacks)](https://user-images.githubusercontent.com/40677817/69894196-9842c900-1370-11ea-8283-9ea4e221384c.png)
 Graph 1. Correlation heatmap between national multiple indicators and numbers of terrorist attacks)
 
- ![Graph 2  Joint distribution of pairs of columns from training set](https://user-images.githubusercontent.com/40677817/69894203-b1e41080-1370-11ea-9e7d-269a213af8c2.png)
+![Graph 2  Joint distribution of pairs of columns from training set](https://user-images.githubusercontent.com/40677817/69894203-b1e41080-1370-11ea-9e7d-269a213af8c2.png)
 Graph 2. Joint distribution of pairs of columns from training set
 
 
@@ -25,10 +25,10 @@ Graph 2. Joint distribution of pairs of columns from training set
 The first operation on data set is to normalize the input data as the input data set have different data range and scale, the normalization limits multiple inputs to same scale date. It is useful for later model training.
 Then a sequential pipeline uses 3 layers pipeline was introduced to train the model. Layer 1 is initial layer that contains the input shape and beginning method to be used for the pipeline. For example, “Relu”, “Sigmoid”, “Softmax” and etc. and be used to initial the process. After comparison, “Relu” was selected as initial layer method for this pipeline as it has the lowest error rate and best data fit curve.
 The 2nd layer is mainly responsible for more accurate and detailed training on the incoming data. When the training was finished, we can find layer trains the 8 times parameters than layer 1. The role of the last layer is to output the data one by one. (Graph 4. Model Summary)
- ![Graph 3  Model training logic diagram](https://user-images.githubusercontent.com/40677817/69894208-ca542b00-1370-11ea-8a73-52c6f7ff77b4.png)
-Graph 3. Model training logic diagram
- ![Graph 4  Model summary](https://user-images.githubusercontent.com/40677817/69894215-de982800-1370-11ea-9e06-b1651df0b980.png)
-Graph 4. Model summary
+ 
+![Graph 3  Model training logic diagram](https://user-images.githubusercontent.com/40677817/69894208-ca542b00-1370-11ea-8a73-52c6f7ff77b4.png)Graph 3. Model training logic diagram
+
+![Graph 4  Model summary](https://user-images.githubusercontent.com/40677817/69894215-de982800-1370-11ea-9e06-b1651df0b980.png)Graph 4. Model summary
 
 
 
@@ -37,21 +37,20 @@ Result and Evaluation
 After 1000 rounds training, mean absolute error and mean square error were used to show the difference between the two models. (Graph 5a, Error comparison of train data and actual data of 1000 rounds)
 Graph 5a shows, the degradation happens after 100 rounds, which means it is unncessary to train the model for more than 100 rounds. In this case, early stop function is called to avoid further training if no improvement appeared. (Graph 5b, Error comparison of train data and actual data of early stop)
   ![5a](https://user-images.githubusercontent.com/40677817/69894231-04bdc800-1371-11ea-99c3-a0468409dbe8.png)
-                       Graph 5a, Error comparison of train data and actual data of 1000 rounds  
-                       ![5b](https://user-images.githubusercontent.com/40677817/69894232-04bdc800-1371-11ea-8e6f-1f4178f3e225.png)
-                       Graph 5b, Error comparison of train data and actual data of early stop
+  Graph 5a, Error comparison of train data and actual data of 1000 rounds  
+  ![5b](https://user-images.githubusercontent.com/40677817/69894232-04bdc800-1371-11ea-8e6f-1f4178f3e225.png)
+ Graph 5b, Error comparison of train data and actual data of early stop
 
 2)	Prediction based on trained model
 Finally, use the previously trained model to make predictions and compare the predicted results with real results.
-  ![6a](https://user-images.githubusercontent.com/40677817/69894229-04253180-1371-11ea-8374-28606f2ca497.png)
-                                Graph 6a, Comparison between predicted results with real results   
-                                ![6b](https://user-images.githubusercontent.com/40677817/69894230-04253180-1371-11ea-99c7-165962c3fe01.png)
-                                Graph 6b, Prediction minus Test
+![6a](https://user-images.githubusercontent.com/40677817/69894229-04253180-1371-11ea-8374-28606f2ca497.png)
+Graph 6a, Comparison between predicted results with real results   
+![6b](https://user-images.githubusercontent.com/40677817/69894230-04253180-1371-11ea-99c7-165962c3fe01.png)
+Graph 6b, Prediction minus Test
 
 It can be found that the predicted results and the real results are distributed on both sides of the midline, which is caused by the lack of correlation of the data itself. The mean abs error between predicted results and the real results is 16.6570 events. This error can be further reduced by feeding more data. As current 
 national multiple indicators only include 3 years data. Therefore, this error range is acceptable for this assignment. 
 
-![Graph 1  Correlation heatmap between national multiple indicators and numbers of terrorist attacks)](https://user-images.githubusercontent.com/40677817/69894179-616cb300-1370-11ea-83fa-8135903aa2df.png)
 
 
 Reference:
